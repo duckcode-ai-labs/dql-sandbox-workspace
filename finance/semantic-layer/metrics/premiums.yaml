@@ -1,0 +1,37 @@
+metrics:
+  - name: written_premium
+    label: Premium written
+    description: Total premium Harbor Mutual wrote.
+    domain: finance
+    status: certified
+    cube: premiums
+    table: premiums
+    sql: SUM(written_premium)
+    type: sum
+    aggregation: sum
+    metric_type: simple
+    type_params:
+      measure: written_premium
+    agg_time_dimension: month
+    format:
+      kind: currency
+      currency: USD
+      decimals: 0
+  - name: earned_premium
+    label: Premium earned
+    description: Total premium Harbor Mutual earned.
+    domain: finance
+    status: certified
+    cube: premiums
+    table: premiums
+    sql: SUM(earned_premium)
+    type: sum
+    aggregation: sum
+    metric_type: simple
+    type_params:
+      measure: earned_premium
+    agg_time_dimension: month
+    format:
+      kind: currency
+      currency: USD
+      decimals: 0

@@ -1,0 +1,768 @@
+{
+  "version": 3,
+  "id": "overview",
+  "metadata": {
+    "title": "Claims this week",
+    "description": "Claims filed, amounts claimed and paid, the weekly trend, and claims by region and product.",
+    "domain": "claims",
+    "audience": "stakeholders",
+    "visibility": "shared",
+    "lifecycle": "certified"
+  },
+  "layout": {
+    "kind": "grid",
+    "cols": 12,
+    "rowHeight": 80,
+    "items": [
+      {
+        "i": "claims-filed",
+        "x": 0,
+        "y": 0,
+        "w": 4,
+        "h": 2,
+        "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+        "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+        "query": {
+          "dimensions": [],
+          "measures": [
+            {
+              "measure": "claim_count"
+            }
+          ]
+        },
+        "viz": {
+          "type": "kpi"
+        },
+        "title": "Claims filed",
+        "sourceClass": "certified_block",
+        "filterBindings": [],
+        "review": {
+          "status": "not_required",
+          "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+        },
+        "trustState": "certified",
+        "reviewStatus": "certified"
+      },
+      {
+        "i": "amount-claimed",
+        "x": 4,
+        "y": 0,
+        "w": 4,
+        "h": 2,
+        "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+        "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+        "query": {
+          "dimensions": [],
+          "measures": [
+            {
+              "measure": "claimed_amount_total"
+            }
+          ]
+        },
+        "viz": {
+          "type": "kpi"
+        },
+        "title": "Amount claimed",
+        "sourceClass": "certified_block",
+        "filterBindings": [],
+        "review": {
+          "status": "not_required",
+          "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+        },
+        "trustState": "certified",
+        "reviewStatus": "certified"
+      },
+      {
+        "i": "claims-paid",
+        "x": 8,
+        "y": 0,
+        "w": 4,
+        "h": 2,
+        "sourceId": "app:block:claims:1bab73bd3f5ab0a322a8",
+        "sourceRevision": "sha256:a77bad2a1a8884ebf54d72baa5824ccbda52a832c8f738e6380e18d7b6b4e46e",
+        "query": {
+          "dimensions": [],
+          "measures": [
+            {
+              "measure": "paid_amount"
+            }
+          ]
+        },
+        "viz": {
+          "type": "kpi"
+        },
+        "title": "Claims paid",
+        "sourceClass": "certified_block",
+        "filterBindings": [],
+        "review": {
+          "status": "not_required",
+          "sourceFingerprint": "sha256:a77bad2a1a8884ebf54d72baa5824ccbda52a832c8f738e6380e18d7b6b4e46e"
+        },
+        "trustState": "certified",
+        "reviewStatus": "certified"
+      },
+      {
+        "i": "claims-by-week",
+        "x": 0,
+        "y": 2,
+        "w": 12,
+        "h": 4,
+        "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+        "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+        "query": {
+          "dimensions": [
+            {
+              "field": "reported_date",
+              "timeGrain": "week"
+            }
+          ],
+          "measures": [
+            {
+              "measure": "claim_count"
+            }
+          ],
+          "orderBy": [
+            {
+              "alias": "reported_date_week",
+              "direction": "asc"
+            }
+          ]
+        },
+        "viz": {
+          "type": "line"
+        },
+        "title": "Claims filed by week",
+        "sourceClass": "certified_block",
+        "filterBindings": [],
+        "review": {
+          "status": "not_required",
+          "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+        },
+        "trustState": "certified",
+        "reviewStatus": "certified"
+      },
+      {
+        "i": "claims-by-region",
+        "x": 0,
+        "y": 6,
+        "w": 12,
+        "h": 5,
+        "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+        "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+        "query": {
+          "dimensions": [
+            {
+              "field": "region"
+            },
+            {
+              "field": "product"
+            }
+          ],
+          "measures": [
+            {
+              "measure": "claim_count"
+            },
+            {
+              "measure": "claimed_amount_total"
+            }
+          ],
+          "orderBy": [
+            {
+              "alias": "claim_count",
+              "direction": "desc"
+            }
+          ],
+          "limit": 50
+        },
+        "viz": {
+          "type": "table"
+        },
+        "title": "Claims by region and product",
+        "sourceClass": "certified_block",
+        "filterBindings": [],
+        "review": {
+          "status": "not_required",
+          "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+        },
+        "trustState": "certified",
+        "reviewStatus": "certified"
+      }
+    ],
+    "responsive": {
+      "wide": {
+        "kind": "grid",
+        "cols": 12,
+        "rowHeight": 80,
+        "items": [
+          {
+            "i": "claims-filed",
+            "x": 0,
+            "y": 0,
+            "w": 4,
+            "h": 2,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                }
+              ]
+            },
+            "viz": {
+              "type": "kpi"
+            },
+            "title": "Claims filed",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "amount-claimed",
+            "x": 4,
+            "y": 0,
+            "w": 4,
+            "h": 2,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [],
+              "measures": [
+                {
+                  "measure": "claimed_amount_total"
+                }
+              ]
+            },
+            "viz": {
+              "type": "kpi"
+            },
+            "title": "Amount claimed",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-paid",
+            "x": 8,
+            "y": 0,
+            "w": 4,
+            "h": 2,
+            "sourceId": "app:block:claims:1bab73bd3f5ab0a322a8",
+            "sourceRevision": "sha256:a77bad2a1a8884ebf54d72baa5824ccbda52a832c8f738e6380e18d7b6b4e46e",
+            "query": {
+              "dimensions": [],
+              "measures": [
+                {
+                  "measure": "paid_amount"
+                }
+              ]
+            },
+            "viz": {
+              "type": "kpi"
+            },
+            "title": "Claims paid",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:a77bad2a1a8884ebf54d72baa5824ccbda52a832c8f738e6380e18d7b6b4e46e"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-by-week",
+            "x": 0,
+            "y": 2,
+            "w": 12,
+            "h": 4,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "reported_date",
+                  "timeGrain": "week"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                }
+              ],
+              "orderBy": [
+                {
+                  "alias": "reported_date_week",
+                  "direction": "asc"
+                }
+              ]
+            },
+            "viz": {
+              "type": "line"
+            },
+            "title": "Claims filed by week",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-by-region",
+            "x": 0,
+            "y": 6,
+            "w": 12,
+            "h": 5,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "region"
+                },
+                {
+                  "field": "product"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                },
+                {
+                  "measure": "claimed_amount_total"
+                }
+              ],
+              "orderBy": [
+                {
+                  "alias": "claim_count",
+                  "direction": "desc"
+                }
+              ],
+              "limit": 50
+            },
+            "viz": {
+              "type": "table"
+            },
+            "title": "Claims by region and product",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          }
+        ]
+      },
+      "medium": {
+        "kind": "grid",
+        "cols": 6,
+        "rowHeight": 80,
+        "items": [
+          {
+            "i": "claims-filed",
+            "x": 0,
+            "y": 0,
+            "w": 2,
+            "h": 2,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                }
+              ]
+            },
+            "viz": {
+              "type": "kpi"
+            },
+            "title": "Claims filed",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "amount-claimed",
+            "x": 2,
+            "y": 0,
+            "w": 2,
+            "h": 2,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [],
+              "measures": [
+                {
+                  "measure": "claimed_amount_total"
+                }
+              ]
+            },
+            "viz": {
+              "type": "kpi"
+            },
+            "title": "Amount claimed",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-paid",
+            "x": 4,
+            "y": 0,
+            "w": 2,
+            "h": 2,
+            "sourceId": "app:block:claims:1bab73bd3f5ab0a322a8",
+            "sourceRevision": "sha256:a77bad2a1a8884ebf54d72baa5824ccbda52a832c8f738e6380e18d7b6b4e46e",
+            "query": {
+              "dimensions": [],
+              "measures": [
+                {
+                  "measure": "paid_amount"
+                }
+              ]
+            },
+            "viz": {
+              "type": "kpi"
+            },
+            "title": "Claims paid",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:a77bad2a1a8884ebf54d72baa5824ccbda52a832c8f738e6380e18d7b6b4e46e"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-by-week",
+            "x": 0,
+            "y": 2,
+            "w": 6,
+            "h": 4,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "reported_date",
+                  "timeGrain": "week"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                }
+              ],
+              "orderBy": [
+                {
+                  "alias": "reported_date_week",
+                  "direction": "asc"
+                }
+              ]
+            },
+            "viz": {
+              "type": "line"
+            },
+            "title": "Claims filed by week",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-by-region",
+            "x": 0,
+            "y": 6,
+            "w": 6,
+            "h": 5,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "region"
+                },
+                {
+                  "field": "product"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                },
+                {
+                  "measure": "claimed_amount_total"
+                }
+              ],
+              "orderBy": [
+                {
+                  "alias": "claim_count",
+                  "direction": "desc"
+                }
+              ],
+              "limit": 50
+            },
+            "viz": {
+              "type": "table"
+            },
+            "title": "Claims by region and product",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          }
+        ]
+      },
+      "narrow": {
+        "kind": "grid",
+        "cols": 1,
+        "rowHeight": 80,
+        "items": [
+          {
+            "i": "claims-filed",
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 2,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                }
+              ]
+            },
+            "viz": {
+              "type": "kpi"
+            },
+            "title": "Claims filed",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "amount-claimed",
+            "x": 0,
+            "y": 2,
+            "w": 1,
+            "h": 2,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [],
+              "measures": [
+                {
+                  "measure": "claimed_amount_total"
+                }
+              ]
+            },
+            "viz": {
+              "type": "kpi"
+            },
+            "title": "Amount claimed",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-paid",
+            "x": 0,
+            "y": 4,
+            "w": 1,
+            "h": 2,
+            "sourceId": "app:block:claims:1bab73bd3f5ab0a322a8",
+            "sourceRevision": "sha256:a77bad2a1a8884ebf54d72baa5824ccbda52a832c8f738e6380e18d7b6b4e46e",
+            "query": {
+              "dimensions": [],
+              "measures": [
+                {
+                  "measure": "paid_amount"
+                }
+              ]
+            },
+            "viz": {
+              "type": "kpi"
+            },
+            "title": "Claims paid",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:a77bad2a1a8884ebf54d72baa5824ccbda52a832c8f738e6380e18d7b6b4e46e"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-by-week",
+            "x": 0,
+            "y": 6,
+            "w": 1,
+            "h": 4,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "reported_date",
+                  "timeGrain": "week"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                }
+              ],
+              "orderBy": [
+                {
+                  "alias": "reported_date_week",
+                  "direction": "asc"
+                }
+              ]
+            },
+            "viz": {
+              "type": "line"
+            },
+            "title": "Claims filed by week",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-by-region",
+            "x": 0,
+            "y": 10,
+            "w": 1,
+            "h": 5,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "region"
+                },
+                {
+                  "field": "product"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                },
+                {
+                  "measure": "claimed_amount_total"
+                }
+              ],
+              "orderBy": [
+                {
+                  "alias": "claim_count",
+                  "direction": "desc"
+                }
+              ],
+              "limit": 50
+            },
+            "viz": {
+              "type": "table"
+            },
+            "title": "Claims by region and product",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          }
+        ]
+      }
+    }
+  },
+  "datasets": [
+    {
+      "id": "dataset_f47c83a1217db99c",
+      "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+      "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+      "snapshotId": "e7f1defa005b4d8df37b57e0443e6ee8d296182f701665c478cce8059ebac2a3",
+      "contractFingerprint": "sha256:4dd74f56aaf680b94b764c79249e4174dd3bb6627fa4507a64bc535d04b38409"
+    },
+    {
+      "id": "dataset_4e124cd3fc4fe287",
+      "sourceId": "app:block:claims:1bab73bd3f5ab0a322a8",
+      "sourceRevision": "sha256:a77bad2a1a8884ebf54d72baa5824ccbda52a832c8f738e6380e18d7b6b4e46e",
+      "snapshotId": "e7f1defa005b4d8df37b57e0443e6ee8d296182f701665c478cce8059ebac2a3",
+      "contractFingerprint": "sha256:69b96f3c9f299823b479fd9dd0d57dd79abaad480c51526c4a8ff567d266aea5"
+    }
+  ],
+  "filters": [
+    {
+      "id": "region",
+      "type": "multiselect",
+      "label": "Region",
+      "scope": {
+        "app": true
+      },
+      "datasetBindings": {
+        "dataset_f47c83a1217db99c": {
+          "field": "region"
+        },
+        "dataset_4e124cd3fc4fe287": {
+          "field": "region"
+        }
+      }
+    }
+  ]
+}

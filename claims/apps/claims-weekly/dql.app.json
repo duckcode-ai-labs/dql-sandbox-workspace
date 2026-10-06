@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "id": "claims-weekly",
+  "name": "Claims Weekly",
+  "description": "What the claims team looks at every Monday: claims filed, amounts claimed and paid, the weekly trend and where claims come from.",
+  "visibility": "shared",
+  "publicationIntent": "shared_project",
+  "ownerDomain": "claims",
+  "usesDomains": [
+    "claims"
+  ],
+  "requiredExports": [],
+  "domain": "claims",
+  "audience": "stakeholders",
+  "lifecycle": "certified",
+  "owners": [
+    "maria@harbor.example"
+  ],
+  "members": [
+    {
+      "userId": "maria@harbor.example",
+      "displayName": "maria@harbor.example",
+      "roles": [
+        "owner",
+        "analyst"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "owner",
+      "displayName": "Owner"
+    },
+    {
+      "id": "analyst",
+      "displayName": "Analyst"
+    },
+    {
+      "id": "viewer",
+      "displayName": "Viewer"
+    }
+  ],
+  "policies": [
+    {
+      "id": "readers",
+      "domain": "claims",
+      "minClassification": "internal",
+      "allowedRoles": [
+        "viewer",
+        "analyst",
+        "owner"
+      ],
+      "accessLevel": "read",
+      "enabled": true
+    },
+    {
+      "id": "analyst-execute",
+      "domain": "claims",
+      "minClassification": "internal",
+      "allowedRoles": [
+        "analyst",
+        "owner"
+      ],
+      "accessLevel": "execute",
+      "enabled": true
+    },
+    {
+      "id": "owner-admin",
+      "domain": "claims",
+      "minClassification": "restricted",
+      "allowedRoles": [
+        "owner"
+      ],
+      "accessLevel": "admin",
+      "enabled": true
+    }
+  ],
+  "rlsBindings": [],
+  "schedules": [
+    {
+      "id": "monday-digest",
+      "cron": "0 7 * * 1",
+      "timezone": "America/New_York",
+      "dashboard": "overview",
+      "runAs": "maria@harbor.example",
+      "deliver": [
+        {
+          "kind": "email",
+          "to": [
+            "claims-leadership@harbor.example"
+          ]
+        },
+        {
+          "kind": "slack",
+          "channel": "#claims-leadership"
+        }
+      ]
+    }
+  ],
+  "homepage": {
+    "type": "dashboard",
+    "id": "overview"
+  }
+}

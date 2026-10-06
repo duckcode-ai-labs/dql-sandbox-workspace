@@ -1,0 +1,386 @@
+{
+ "metadata": {
+  "project_name": "harbor_claims",
+  "dbt_schema_version": "https://schemas.getdbt.com/dbt/manifest/v12.json"
+ },
+ "nodes": {
+  "model.harbor_claims.regions": {
+   "unique_id": "model.harbor_claims.regions",
+   "resource_type": "model",
+   "name": "regions",
+   "alias": "regions",
+   "database": "harbor",
+   "schema": "main",
+   "relation_name": "\"harbor\".\"main\".\"regions\"",
+   "original_file_path": "models/claims/regions.sql",
+   "description": "Harbor Mutual sales regions.",
+   "columns": {
+    "region": {
+     "tags": [],
+     "meta": {},
+     "name": "region",
+     "description": "Region name.",
+     "tests": [
+      "unique",
+      "not_null"
+     ]
+    },
+    "region_manager": {
+     "tags": [],
+     "meta": {},
+     "name": "region_manager",
+     "description": "Who runs the region."
+    }
+   },
+   "depends_on": {
+    "nodes": []
+   }
+  },
+  "model.harbor_claims.adjusters": {
+   "unique_id": "model.harbor_claims.adjusters",
+   "resource_type": "model",
+   "name": "adjusters",
+   "alias": "adjusters",
+   "database": "harbor",
+   "schema": "main",
+   "relation_name": "\"harbor\".\"main\".\"adjusters\"",
+   "original_file_path": "models/claims/adjusters.sql",
+   "description": "Claims adjusters and their regions. Not yet modeled in DQL: questions about adjusters get answers a steward has not reviewed.",
+   "columns": {
+    "adjuster_id": {
+     "tags": [],
+     "meta": {},
+     "name": "adjuster_id",
+     "description": "Adjuster id.",
+     "tests": [
+      "unique",
+      "not_null"
+     ]
+    },
+    "adjuster_name": {
+     "tags": [],
+     "meta": {},
+     "name": "adjuster_name",
+     "description": "Adjuster name."
+    },
+    "region": {
+     "tags": [],
+     "meta": {},
+     "name": "region",
+     "description": "Region."
+    },
+    "team": {
+     "tags": [],
+     "meta": {},
+     "name": "team",
+     "description": "Property, Casualty or Medical."
+    }
+   },
+   "depends_on": {
+    "nodes": []
+   }
+  },
+  "model.harbor_claims.members": {
+   "unique_id": "model.harbor_claims.members",
+   "resource_type": "model",
+   "name": "members",
+   "alias": "members",
+   "database": "harbor",
+   "schema": "main",
+   "relation_name": "\"harbor\".\"main\".\"members\"",
+   "original_file_path": "models/claims/members.sql",
+   "description": "Policyholders. Personal data: every identifying column is tagged.",
+   "columns": {
+    "member_id": {
+     "tags": [],
+     "meta": {},
+     "name": "member_id",
+     "description": "Member id.",
+     "tests": [
+      "unique",
+      "not_null"
+     ]
+    },
+    "full_name": {
+     "tags": [
+      "pii"
+     ],
+     "meta": {},
+     "name": "full_name",
+     "description": "Full name."
+    },
+    "ssn": {
+     "tags": [
+      "pii"
+     ],
+     "meta": {
+      "contains_pii": true
+     },
+     "name": "ssn",
+     "description": "Social security number."
+    },
+    "date_of_birth": {
+     "tags": [
+      "pii",
+      "phi"
+     ],
+     "meta": {},
+     "name": "date_of_birth",
+     "description": "Date of birth."
+    },
+    "email": {
+     "tags": [
+      "pii"
+     ],
+     "meta": {},
+     "name": "email",
+     "description": "Email address."
+    },
+    "phone": {
+     "tags": [
+      "pii"
+     ],
+     "meta": {},
+     "name": "phone",
+     "description": "Phone number."
+    },
+    "region": {
+     "tags": [],
+     "meta": {},
+     "name": "region",
+     "description": "Region."
+    },
+    "joined_date": {
+     "tags": [],
+     "meta": {},
+     "name": "joined_date",
+     "description": "When they first bought a policy."
+    }
+   },
+   "depends_on": {
+    "nodes": []
+   }
+  },
+  "model.harbor_claims.policies": {
+   "unique_id": "model.harbor_claims.policies",
+   "resource_type": "model",
+   "name": "policies",
+   "alias": "policies",
+   "database": "harbor",
+   "schema": "main",
+   "relation_name": "\"harbor\".\"main\".\"policies\"",
+   "original_file_path": "models/claims/policies.sql",
+   "description": "Policies members hold.",
+   "columns": {
+    "policy_id": {
+     "tags": [],
+     "meta": {},
+     "name": "policy_id",
+     "description": "Policy id.",
+     "tests": [
+      "unique",
+      "not_null"
+     ]
+    },
+    "member_id": {
+     "tags": [],
+     "meta": {},
+     "name": "member_id",
+     "description": "Member."
+    },
+    "product": {
+     "tags": [],
+     "meta": {},
+     "name": "product",
+     "description": "Auto, Home or Health."
+    },
+    "region": {
+     "tags": [],
+     "meta": {},
+     "name": "region",
+     "description": "Region."
+    },
+    "effective_date": {
+     "tags": [],
+     "meta": {},
+     "name": "effective_date",
+     "description": "Start date."
+    },
+    "annual_premium": {
+     "tags": [],
+     "meta": {},
+     "name": "annual_premium",
+     "description": "Annual premium."
+    },
+    "status": {
+     "tags": [],
+     "meta": {},
+     "name": "status",
+     "description": "active or lapsed."
+    }
+   },
+   "depends_on": {
+    "nodes": []
+   }
+  },
+  "model.harbor_claims.claims": {
+   "unique_id": "model.harbor_claims.claims",
+   "resource_type": "model",
+   "name": "claims",
+   "alias": "claims",
+   "database": "harbor",
+   "schema": "main",
+   "relation_name": "\"harbor\".\"main\".\"claims\"",
+   "original_file_path": "models/claims/claims.sql",
+   "description": "One row per claim.",
+   "columns": {
+    "claim_id": {
+     "tags": [],
+     "meta": {},
+     "name": "claim_id",
+     "description": "Claim id.",
+     "tests": [
+      "unique",
+      "not_null"
+     ]
+    },
+    "policy_id": {
+     "tags": [],
+     "meta": {},
+     "name": "policy_id",
+     "description": "Policy."
+    },
+    "member_id": {
+     "tags": [],
+     "meta": {},
+     "name": "member_id",
+     "description": "Member."
+    },
+    "region": {
+     "tags": [],
+     "meta": {},
+     "name": "region",
+     "description": "Region."
+    },
+    "adjuster_id": {
+     "tags": [],
+     "meta": {},
+     "name": "adjuster_id",
+     "description": "Adjuster."
+    },
+    "product": {
+     "tags": [],
+     "meta": {},
+     "name": "product",
+     "description": "Auto, Home or Health."
+    },
+    "claim_type": {
+     "tags": [],
+     "meta": {},
+     "name": "claim_type",
+     "description": "Kind of loss."
+    },
+    "diagnosis_code": {
+     "tags": [
+      "phi"
+     ],
+     "meta": {
+      "classification": "phi"
+     },
+     "name": "diagnosis_code",
+     "description": "Diagnosis code on Health claims (invented ZZ codes)."
+    },
+    "loss_date": {
+     "tags": [],
+     "meta": {},
+     "name": "loss_date",
+     "description": "When the loss happened."
+    },
+    "reported_date": {
+     "tags": [],
+     "meta": {},
+     "name": "reported_date",
+     "description": "When it was reported."
+    },
+    "status": {
+     "tags": [],
+     "meta": {},
+     "name": "status",
+     "description": "open, closed or denied."
+    },
+    "claimed_amount": {
+     "tags": [],
+     "meta": {},
+     "name": "claimed_amount",
+     "description": "Amount claimed."
+    }
+   },
+   "depends_on": {
+    "nodes": []
+   }
+  },
+  "model.harbor_claims.claim_payments": {
+   "unique_id": "model.harbor_claims.claim_payments",
+   "resource_type": "model",
+   "name": "claim_payments",
+   "alias": "claim_payments",
+   "database": "harbor",
+   "schema": "main",
+   "relation_name": "\"harbor\".\"main\".\"claim_payments\"",
+   "original_file_path": "models/claims/claim_payments.sql",
+   "description": "One row per payment on a claim.",
+   "columns": {
+    "payment_id": {
+     "tags": [],
+     "meta": {},
+     "name": "payment_id",
+     "description": "Payment id.",
+     "tests": [
+      "unique",
+      "not_null"
+     ]
+    },
+    "claim_id": {
+     "tags": [],
+     "meta": {},
+     "name": "claim_id",
+     "description": "Claim."
+    },
+    "region": {
+     "tags": [],
+     "meta": {},
+     "name": "region",
+     "description": "Region."
+    },
+    "product": {
+     "tags": [],
+     "meta": {},
+     "name": "product",
+     "description": "Product."
+    },
+    "paid_date": {
+     "tags": [],
+     "meta": {},
+     "name": "paid_date",
+     "description": "When paid."
+    },
+    "amount": {
+     "tags": [],
+     "meta": {},
+     "name": "amount",
+     "description": "Amount paid."
+    },
+    "method": {
+     "tags": [],
+     "meta": {},
+     "name": "method",
+     "description": "ACH, Check or Card."
+    }
+   },
+   "depends_on": {
+    "nodes": []
+   }
+  }
+ },
+ "sources": {}
+}

@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "id": "finance-monthly",
+  "name": "Finance Monthly",
+  "description": "Premium written and earned each month, by region and product.",
+  "visibility": "shared",
+  "publicationIntent": "shared_project",
+  "ownerDomain": "finance",
+  "usesDomains": [
+    "finance"
+  ],
+  "requiredExports": [],
+  "domain": "finance",
+  "audience": "stakeholders",
+  "lifecycle": "certified",
+  "owners": [
+    "frank@harbor.example"
+  ],
+  "members": [
+    {
+      "userId": "frank@harbor.example",
+      "displayName": "frank@harbor.example",
+      "roles": [
+        "owner",
+        "analyst"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "owner",
+      "displayName": "Owner"
+    },
+    {
+      "id": "analyst",
+      "displayName": "Analyst"
+    },
+    {
+      "id": "viewer",
+      "displayName": "Viewer"
+    },
+    {
+      "id": "finance-leaders",
+      "displayName": "finance-leaders (IdP group)"
+    }
+  ],
+  "policies": [
+    {
+      "id": "readers",
+      "domain": "finance",
+      "minClassification": "internal",
+      "allowedRoles": [
+        "finance-leaders",
+        "owner"
+      ],
+      "accessLevel": "read",
+      "enabled": true
+    },
+    {
+      "id": "owner-admin",
+      "domain": "finance",
+      "minClassification": "restricted",
+      "allowedRoles": [
+        "owner"
+      ],
+      "accessLevel": "admin",
+      "enabled": true
+    }
+  ],
+  "rlsBindings": [],
+  "schedules": [],
+  "homepage": {
+    "type": "dashboard",
+    "id": "overview"
+  }
+}

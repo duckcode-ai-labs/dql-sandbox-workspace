@@ -1,0 +1,9 @@
+name: premiums
+label: Premiums semantic model
+description: Premium written and earned.
+domain: finance
+table: premiums
+entities: [policy_month]
+measures: [written_premium, earned_premium]
+dimensions: [region, product]
+time_dimensions: [month]

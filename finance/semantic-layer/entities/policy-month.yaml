@@ -1,0 +1,8 @@
+name: policy_month
+label: Policy month
+description: One policy in one month.
+domain: finance
+cube: premiums
+table: premiums
+type: primary
+expr: policy_id || ':' || CAST(month AS VARCHAR)

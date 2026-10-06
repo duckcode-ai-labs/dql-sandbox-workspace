@@ -1,0 +1,46 @@
+// dql-format: 1
+
+block "Claim payments Dataset" {
+  domain = "claims"
+  type = "custom"
+  status = "certified"
+  owner = "maria@harbor.example"
+  description = "Certified payment-level Dataset: one row per claim payment, with the claim's region and product and the date and amount paid."
+  tags = ["claims", "payments", "app-datasets"]
+
+  grain = {
+    entities = ["claim_payment"]
+    keys = ["payment_id"]
+    keyEvidence = "proof.claim-payments"
+    timeGrain = "day"
+  }
+
+  fields {
+    payment_id { role = "key", type = "string" }
+    claim_id { role = "dimension", type = "string" }
+    region { role = "dimension", type = "string" }
+    product { role = "dimension", type = "string" }
+    paid_date { role = "time", type = "timestamp", grains = ["day", "week", "month"], primary = true }
+    amount { role = "attribute", type = "number" }
+  }
+
+  measures {
+    paid_amount { agg = "sum", from = "amount", additive = "additive", allowedAggs = ["sum"], format = "currency", currency = "USD" }
+    paid_claim_count { agg = "count_distinct", from = "claim_id", additive = "non_additive", allowedAggs = ["count_distinct"], format = "number" }
+  }
+
+  query = """
+SELECT
+  payment_id,
+  claim_id,
+  region,
+  product,
+  paid_date,
+  amount
+FROM claim_payments
+"""
+
+  visualization {
+    chart = "bar"
+  }
+}

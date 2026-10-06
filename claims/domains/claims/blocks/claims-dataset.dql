@@ -1,0 +1,48 @@
+// dql-format: 1
+
+block "Claims Dataset" {
+  domain = "claims"
+  type = "custom"
+  status = "certified"
+  owner = "maria@harbor.example"
+  description = "Certified claim-level Dataset: one row per claim, with where and when it was reported, what kind of claim it is, its status and the amount claimed."
+  tags = ["claims", "app-datasets"]
+
+  grain = {
+    entities = ["claim"]
+    keys = ["claim_id"]
+    keyEvidence = "proof.claims"
+    timeGrain = "day"
+  }
+
+  fields {
+    claim_id { role = "key", type = "string" }
+    region { role = "dimension", type = "string" }
+    product { role = "dimension", type = "string" }
+    claim_type { role = "dimension", type = "string" }
+    status { role = "dimension", type = "string" }
+    reported_date { role = "time", type = "timestamp", grains = ["day", "week", "month"], primary = true }
+    claimed_amount { role = "attribute", type = "number" }
+  }
+
+  measures {
+    claim_count { agg = "count_distinct", from = "claim_id", additive = "non_additive", allowedAggs = ["count_distinct"], format = "number" }
+    claimed_amount_total { agg = "sum", from = "claimed_amount", additive = "additive", allowedAggs = ["sum"], format = "currency", currency = "USD" }
+  }
+
+  query = """
+SELECT
+  claim_id,
+  region,
+  product,
+  claim_type,
+  status,
+  reported_date,
+  claimed_amount
+FROM claims
+"""
+
+  visualization {
+    chart = "bar"
+  }
+}
