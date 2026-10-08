@@ -1,8 +1,0 @@
-// dql-format: 1
-
-domain "Finance" {
-  id = "finance"
-  owner = "frank@harbor.example"
-  description = "Harbor Mutual finance: premiums written and earned, and claims paid against them. Invented data for the DQL Enterprise demo."
-  reviewCadence = "quarterly"
-}

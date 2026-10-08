@@ -1,6 +1,8 @@
 node_modules/
 dql-manifest.json
+# harbor.duckdb is committed on purpose: a cloud worker clones this repository and has no seed step.
 *.duckdb
+!harbor.duckdb
 *.duckdb.wal
 *.run.json
 **/.dql/runs/
@@ -16,5 +18,4 @@ dql-manifest.json
 **/.dql/provider-settings.json
 **/.dql/mcp-servers.json
 **/.dql-user-prefs.json
-# The fake warehouse is built from demo/harbor/seed.mjs at each start.
 seeds/
