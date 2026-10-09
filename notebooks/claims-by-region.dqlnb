@@ -1,0 +1,35 @@
+{
+  "dqlnbVersion": 1,
+  "version": 1,
+  "title": "Claims by region",
+  "metadata": {
+    "title": "Claims by region",
+    "description": "Live permission checks: row rules (region), column masking (members.ssn, pii) and the phi tag (claims.diagnosis_code) as each person runs the same cells."
+  },
+  "cells": [
+    {
+      "id": "about",
+      "type": "markdown",
+      "title": "About",
+      "source": "# Claims by region\n\nEach person runs the same cells. Row rules decide which regions they see; column policies decide whether SSNs are masked. Used by the live permission checks."
+    },
+    {
+      "id": "claims_by_region",
+      "type": "sql",
+      "title": "Claims and amount by region",
+      "source": "SELECT region, count(*) AS claims, round(sum(claimed_amount), 2) AS claimed_amount\nFROM claims\nGROUP BY region\nORDER BY region"
+    },
+    {
+      "id": "members_sample",
+      "type": "sql",
+      "title": "Members (masked columns)",
+      "source": "SELECT member_id, full_name, ssn, region\nFROM members\nORDER BY member_id\nLIMIT 10"
+    },
+    {
+      "id": "claims_by_diagnosis",
+      "type": "sql",
+      "title": "Claims by diagnosis (aggregate only)",
+      "source": "SELECT diagnosis_code, count(*) AS claims\nFROM claims\nGROUP BY diagnosis_code\nORDER BY claims DESC\nLIMIT 10"
+    }
+  ]
+}
