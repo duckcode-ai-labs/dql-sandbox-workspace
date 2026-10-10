@@ -1,0 +1,14 @@
+name: claims-by-product-west
+block: claims-by-product-west
+domain: claims
+description: "Claims by product for the West region (live check W2)."
+owner: "success+dql-live-38039069960-perm-cole@simulator.amazonses.com"
+tags:
+  - claims
+  - w2-live-check
+  - app-source
+source:
+  provider: dql
+  objectType: block
+  objectId: claims-by-product-west
+reviewStatus: draft
