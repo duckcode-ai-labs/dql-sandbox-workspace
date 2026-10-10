@@ -1,0 +1,24 @@
+// dql-format: 1
+
+block "Claims by product (West)" {
+  domain = "claims"
+  type = "custom"
+  status = "draft"
+  owner = "success+dql-live-38048926968-perm-cole@simulator.amazonses.com"
+  description = "Claims by product for the West region (live check W2)."
+  tags = ["claims", "w2-live-check", "app-source"]
+
+  query = """
+SELECT region, product, COUNT(*) AS claims FROM claims GROUP BY region, product ORDER BY region, product
+"""
+
+  visualization {
+    chart = "bar"
+    x = product
+    y = claims
+  }
+
+  tests {
+    assert row_count > 0
+  }
+}
