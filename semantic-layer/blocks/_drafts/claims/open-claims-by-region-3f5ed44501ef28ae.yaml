@@ -1,0 +1,14 @@
+name: open-claims-by-region-3f5ed44501ef28ae
+block: open-claims-by-region-3f5ed44501ef28ae
+domain: _drafts/claims
+description: "reviewed in live check W2"
+owner: "maria@harbor.example"
+tags:
+  - claims
+  - open-claims
+  - app-source
+source:
+  provider: dql
+  objectType: block
+  objectId: open-claims-by-region-3f5ed44501ef28ae
+reviewStatus: draft
