@@ -1,0 +1,36 @@
+// dql-format: 1
+// Draft for DQL Enterprise request R-100, asked by success+dql-live-38112356126-perm-erin@simulator.amazonses.com on 2026-10-11.
+// The SQL below is what the AI wrote. Make it right, declare its grain and keys, add a test and mark it certified,
+// then press "Submit for review" for a steward to review it.
+// Tables it read: harbor.main.adjusters, harbor.main.claims
+
+block "W1 R-100 claimed amount answer" {
+  domain = "claims"
+  type = "custom"
+  status = "certified"
+  owner = "success+dql-live-38112356126-perm-cole@simulator.amazonses.com"
+  description = "W1 R-100 claimed amount answer. Built by the live check R-100."
+  tags = ["request:R-100", "app-source"]
+  pattern = "custom"
+  entities = ["claim"]
+  sourceSystems = ["claims"]
+  grain = "one row per group in the question"
+  reviewCadence = "monthly"
+  llmContext = "Use for the question this block answers. live-check-w1 R-100"
+  outputs = ["adjuster_id", "adjuster_name", "claim_count"]
+
+
+  query = """
+SELECT "harbor"."main"."adjusters"."adjuster_id", "harbor"."main"."adjusters"."adjuster_name", COUNT("harbor"."main"."claims"."claim_id") AS claim_count
+FROM "harbor"."main"."claims"
+JOIN "harbor"."main"."adjusters" ON "harbor"."main"."claims"."adjuster_id" = "harbor"."main"."adjusters"."adjuster_id"
+WHERE "harbor"."main"."claims"."status" = 'open'
+GROUP BY "harbor"."main"."adjusters"."adjuster_id", "harbor"."main"."adjusters"."adjuster_name"
+ORDER BY claim_count DESC
+LIMIT 10
+"""
+
+  tests {
+    assert row_count > 0
+  }
+}
