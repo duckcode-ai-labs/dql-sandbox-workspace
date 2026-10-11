@@ -1,0 +1,347 @@
+{
+  "version": 2,
+  "id": "overview",
+  "metadata": {
+    "title": "Overview",
+    "description": "Starter dashboard for Claims West weekly",
+    "domain": "claims",
+    "audience": "claims-team",
+    "visibility": "shared",
+    "lifecycle": "review"
+  },
+  "layout": {
+    "kind": "grid",
+    "cols": 12,
+    "rowHeight": 80,
+    "items": [
+      {
+        "i": "claims-dataset",
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 3,
+        "block": {
+          "blockId": "Claims Dataset"
+        },
+        "viz": {
+          "type": "bar"
+        },
+        "display": {
+          "mode": "block_hint",
+          "component": "RankingPanel",
+          "defaultVisualization": "bar",
+          "allowedVisualizations": [
+            "bar",
+            "grouped_bar",
+            "stacked_bar",
+            "pie",
+            "donut",
+            "table"
+          ],
+          "layoutIntent": "wide",
+          "rationale": "Block-level visualization is treated as a display hint for Claims Dataset; apps and notebooks may override it.",
+          "trustState": "certified",
+          "reviewStatus": "certified"
+        },
+        "sourceClass": "certified_block",
+        "review": {
+          "status": "not_required",
+          "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+        },
+        "trustState": "certified",
+        "reviewStatus": "certified",
+        "title": "Claims Dataset"
+      },
+      {
+        "i": "open-claims-by-region",
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 3,
+        "block": {
+          "blockId": "Open claims by region"
+        },
+        "viz": {
+          "type": "bar"
+        },
+        "display": {
+          "mode": "block_hint",
+          "component": "RankingPanel",
+          "defaultVisualization": "bar",
+          "allowedVisualizations": [
+            "bar",
+            "grouped_bar",
+            "stacked_bar",
+            "pie",
+            "donut",
+            "table"
+          ],
+          "layoutIntent": "wide",
+          "rationale": "Block-level visualization is treated as a display hint for Open claims by region; apps and notebooks may override it.",
+          "trustState": "certified",
+          "reviewStatus": "certified"
+        },
+        "sourceClass": "certified_block",
+        "review": {
+          "status": "not_required",
+          "sourceFingerprint": "sha256:e5200378c5d96e77054c1f387894fc30cc3ca7a3a9aae0bbabfb96842d3c6f62"
+        },
+        "trustState": "certified",
+        "reviewStatus": "certified",
+        "title": "Open claims by region"
+      }
+    ],
+    "responsive": {
+      "wide": {
+        "kind": "grid",
+        "cols": 12,
+        "rowHeight": 80,
+        "items": [
+          {
+            "i": "claims-dataset",
+            "x": 0,
+            "y": 0,
+            "w": 6,
+            "h": 3,
+            "block": {
+              "blockId": "Claims Dataset"
+            },
+            "viz": {
+              "type": "bar"
+            },
+            "display": {
+              "mode": "block_hint",
+              "component": "RankingPanel",
+              "defaultVisualization": "bar",
+              "allowedVisualizations": [
+                "bar",
+                "grouped_bar",
+                "stacked_bar",
+                "pie",
+                "donut",
+                "table"
+              ],
+              "layoutIntent": "wide",
+              "rationale": "Block-level visualization is treated as a display hint for Claims Dataset; apps and notebooks may override it.",
+              "trustState": "certified",
+              "reviewStatus": "certified"
+            },
+            "sourceClass": "certified_block",
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified",
+            "title": "Claims Dataset"
+          },
+          {
+            "i": "open-claims-by-region",
+            "x": 6,
+            "y": 0,
+            "w": 6,
+            "h": 3,
+            "block": {
+              "blockId": "Open claims by region"
+            },
+            "viz": {
+              "type": "bar"
+            },
+            "display": {
+              "mode": "block_hint",
+              "component": "RankingPanel",
+              "defaultVisualization": "bar",
+              "allowedVisualizations": [
+                "bar",
+                "grouped_bar",
+                "stacked_bar",
+                "pie",
+                "donut",
+                "table"
+              ],
+              "layoutIntent": "wide",
+              "rationale": "Block-level visualization is treated as a display hint for Open claims by region; apps and notebooks may override it.",
+              "trustState": "certified",
+              "reviewStatus": "certified"
+            },
+            "sourceClass": "certified_block",
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:e5200378c5d96e77054c1f387894fc30cc3ca7a3a9aae0bbabfb96842d3c6f62"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified",
+            "title": "Open claims by region"
+          }
+        ]
+      },
+      "medium": {
+        "kind": "grid",
+        "cols": 6,
+        "rowHeight": 80,
+        "items": [
+          {
+            "i": "claims-dataset",
+            "x": 0,
+            "y": 0,
+            "w": 3,
+            "h": 3,
+            "block": {
+              "blockId": "Claims Dataset"
+            },
+            "viz": {
+              "type": "bar"
+            },
+            "display": {
+              "mode": "block_hint",
+              "component": "RankingPanel",
+              "defaultVisualization": "bar",
+              "allowedVisualizations": [
+                "bar",
+                "grouped_bar",
+                "stacked_bar",
+                "pie",
+                "donut",
+                "table"
+              ],
+              "layoutIntent": "wide",
+              "rationale": "Block-level visualization is treated as a display hint for Claims Dataset; apps and notebooks may override it.",
+              "trustState": "certified",
+              "reviewStatus": "certified"
+            },
+            "sourceClass": "certified_block",
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified",
+            "title": "Claims Dataset"
+          },
+          {
+            "i": "open-claims-by-region",
+            "x": 3,
+            "y": 0,
+            "w": 3,
+            "h": 3,
+            "block": {
+              "blockId": "Open claims by region"
+            },
+            "viz": {
+              "type": "bar"
+            },
+            "display": {
+              "mode": "block_hint",
+              "component": "RankingPanel",
+              "defaultVisualization": "bar",
+              "allowedVisualizations": [
+                "bar",
+                "grouped_bar",
+                "stacked_bar",
+                "pie",
+                "donut",
+                "table"
+              ],
+              "layoutIntent": "wide",
+              "rationale": "Block-level visualization is treated as a display hint for Open claims by region; apps and notebooks may override it.",
+              "trustState": "certified",
+              "reviewStatus": "certified"
+            },
+            "sourceClass": "certified_block",
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:e5200378c5d96e77054c1f387894fc30cc3ca7a3a9aae0bbabfb96842d3c6f62"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified",
+            "title": "Open claims by region"
+          }
+        ]
+      },
+      "narrow": {
+        "kind": "grid",
+        "cols": 1,
+        "rowHeight": 80,
+        "items": [
+          {
+            "i": "claims-dataset",
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 3,
+            "block": {
+              "blockId": "Claims Dataset"
+            },
+            "viz": {
+              "type": "bar"
+            },
+            "display": {
+              "mode": "block_hint",
+              "component": "RankingPanel",
+              "defaultVisualization": "bar",
+              "allowedVisualizations": [
+                "bar",
+                "grouped_bar",
+                "stacked_bar",
+                "pie",
+                "donut",
+                "table"
+              ],
+              "layoutIntent": "wide",
+              "rationale": "Block-level visualization is treated as a display hint for Claims Dataset; apps and notebooks may override it.",
+              "trustState": "certified",
+              "reviewStatus": "certified"
+            },
+            "sourceClass": "certified_block",
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified",
+            "title": "Claims Dataset"
+          },
+          {
+            "i": "open-claims-by-region",
+            "x": 0,
+            "y": 3,
+            "w": 1,
+            "h": 3,
+            "block": {
+              "blockId": "Open claims by region"
+            },
+            "viz": {
+              "type": "bar"
+            },
+            "display": {
+              "mode": "block_hint",
+              "component": "RankingPanel",
+              "defaultVisualization": "bar",
+              "allowedVisualizations": [
+                "bar",
+                "grouped_bar",
+                "stacked_bar",
+                "pie",
+                "donut",
+                "table"
+              ],
+              "layoutIntent": "wide",
+              "rationale": "Block-level visualization is treated as a display hint for Open claims by region; apps and notebooks may override it.",
+              "trustState": "certified",
+              "reviewStatus": "certified"
+            },
+            "sourceClass": "certified_block",
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:e5200378c5d96e77054c1f387894fc30cc3ca7a3a9aae0bbabfb96842d3c6f62"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified",
+            "title": "Open claims by region"
+          }
+        ]
+      }
+    }
+  },
+  "filters": []
+}
