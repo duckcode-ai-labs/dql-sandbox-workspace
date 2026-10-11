@@ -1,0 +1,34 @@
+version: 2
+semantic_models:
+  - name: claims
+    model: ref('claims')
+    defaults:
+      agg_time_dimension: loss_date
+    entities:
+      - name: claim
+        type: primary
+        expr: claim_id
+    dimensions:
+      - name: loss_date
+        type: time
+        type_params:
+          time_granularity: day
+    measures:
+      - name: average_claimed_amount
+        description: Average amount claimed per claim (live check W2).
+        agg: average
+        expr: claimed_amount
+metrics:
+  - name: average_claimed_amount
+    label: Average claimed amount
+    description: Average amount claimed per claim (live check W2).
+    type: simple
+    type_params:
+      measure: average_claimed_amount
+    config:
+      meta:
+        domain: claims
+        synonyms:
+          - mean claimed amount
+        dql:
+          authored: true
