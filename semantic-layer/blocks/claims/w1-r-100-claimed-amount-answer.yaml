@@ -1,0 +1,13 @@
+name: w1-r-100-claimed-amount-answer
+block: w1-r-100-claimed-amount-answer
+domain: claims
+description: "Answers \\"
+owner: "success+dql-live-38123157699-perm-cole@simulator.amazonses.com"
+tags:
+  - request:R-100
+  - app-source
+source:
+  provider: dql
+  objectType: block
+  objectId: w1-r-100-claimed-amount-answer
+reviewStatus: draft
