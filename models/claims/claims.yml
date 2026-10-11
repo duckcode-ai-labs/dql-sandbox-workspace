@@ -1,0 +1,4 @@
+version: 2
+models:
+  - name: claims
+    description: One row per claim. (reviewed in live check W2)
