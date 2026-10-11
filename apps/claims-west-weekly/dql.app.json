@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "id": "claims-west-weekly",
+  "name": "Claims West weekly",
+  "description": "Governed analytical App for Claims West weekly",
+  "visibility": "shared",
+  "publicationIntent": "shared_project",
+  "ownerDomain": "claims",
+  "usesDomains": [
+    "claims"
+  ],
+  "requiredExports": [],
+  "domain": "claims",
+  "groups": [],
+  "audience": "claims-team",
+  "lifecycle": "review",
+  "owners": [
+    "success+dql-live-38131678753-perm-cole@simulator.amazonses.com"
+  ],
+  "tags": [],
+  "members": [
+    {
+      "userId": "success+dql-live-38131678753-perm-cole@simulator.amazonses.com",
+      "displayName": "success+dql-live-38131678753-perm-cole@simulator.amazonses.com",
+      "roles": [
+        "owner",
+        "analyst"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "owner",
+      "displayName": "Owner"
+    },
+    {
+      "id": "analyst",
+      "displayName": "Analyst"
+    },
+    {
+      "id": "viewer",
+      "displayName": "Viewer"
+    }
+  ],
+  "policies": [
+    {
+      "id": "viewers-read",
+      "domain": "claims",
+      "minClassification": "internal",
+      "allowedRoles": [
+        "viewer",
+        "analyst",
+        "owner"
+      ],
+      "accessLevel": "read",
+      "enabled": true
+    },
+    {
+      "id": "analyst-execute",
+      "domain": "claims",
+      "minClassification": "internal",
+      "allowedRoles": [
+        "analyst",
+        "owner"
+      ],
+      "accessLevel": "execute",
+      "enabled": true
+    },
+    {
+      "id": "owner-admin",
+      "domain": "claims",
+      "minClassification": "restricted",
+      "allowedRoles": [
+        "owner"
+      ],
+      "accessLevel": "admin",
+      "enabled": true
+    }
+  ],
+  "homepage": {
+    "type": "dashboard",
+    "id": "overview"
+  }
+}
