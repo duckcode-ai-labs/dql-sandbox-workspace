@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "id": "overview",
+  "metadata": {
+    "title": "Overview",
+    "description": "Starter dashboard for Claims West weekly",
+    "domain": "claims",
+    "audience": "claims-team",
+    "visibility": "shared",
+    "lifecycle": "review"
+  },
+  "layout": {
+    "kind": "grid",
+    "cols": 12,
+    "rowHeight": 80,
+    "items": [],
+    "responsive": {
+      "wide": {
+        "kind": "grid",
+        "cols": 12,
+        "rowHeight": 80,
+        "items": []
+      },
+      "medium": {
+        "kind": "grid",
+        "cols": 6,
+        "rowHeight": 80,
+        "items": []
+      },
+      "narrow": {
+        "kind": "grid",
+        "cols": 1,
+        "rowHeight": 80,
+        "items": []
+      }
+    }
+  }
+}
