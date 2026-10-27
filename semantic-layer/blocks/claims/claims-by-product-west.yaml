@@ -1,0 +1,30 @@
+name: claims-by-product-west
+block: claims-by-product-west
+domain: claims
+description: "Claims by product for the West region (live check W2)."
+owner: "success+dql-live-40513842277-perm-cole@simulator.amazonses.com"
+tags:
+  - claims
+  - w2-live-check
+  - app-source
+source:
+  provider: dql
+  objectType: block
+  objectId: claims-by-product-west
+reviewStatus: certified
+certification:
+  certifiedBy: success+dql-live-40513842277-perm-cole@simulator.amazonses.com
+  certifiedAt: '2026-10-27T14:41:21.785Z'
+  via: block-studio
+  rules: enterprise
+  sourceSha256: 3c40cf913c95f48d8325d5af86c8bdbb13e83f40c3e2f7df73ca24adc6b460c2
+  checks:
+    - metadata
+    - validation
+    - run
+    - tests
+    - chart
+    - lineage
+    - ai-reviewed
+  warnings:
+    - 'Block has LLM context: No llmContext set — agents will fall back to description/SQL'
