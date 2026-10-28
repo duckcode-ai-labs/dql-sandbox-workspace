@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "id": "claims-west-weekly",
+  "name": "Claims West weekly",
+  "description": "Claims by product for the West region, week by week (live check W2)",
+  "visibility": "shared",
+  "publicationIntent": "shared_project",
+  "ownerDomain": "claims",
+  "usesDomains": [
+    "claims"
+  ],
+  "requiredExports": [],
+  "domain": "claims",
+  "audience": "claims-team",
+  "lifecycle": "certified",
+  "certifiedBy": "success+dql-live-40724556538-perm-cole@simulator.amazonses.com",
+  "certifiedAt": "2026-10-28T17:13:24.604Z",
+  "tileTrust": {
+    "certified": 2,
+    "total": 2
+  },
+  "owners": [
+    "success+dql-live-40724556538-perm-cole@simulator.amazonses.com"
+  ],
+  "members": [
+    {
+      "userId": "success+dql-live-40724556538-perm-cole@simulator.amazonses.com",
+      "displayName": "success+dql-live-40724556538-perm-cole@simulator.amazonses.com",
+      "roles": [
+        "owner",
+        "analyst"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "owner",
+      "displayName": "Owner"
+    },
+    {
+      "id": "analyst",
+      "displayName": "Analyst"
+    },
+    {
+      "id": "viewer",
+      "displayName": "Viewer"
+    }
+  ],
+  "policies": [
+    {
+      "id": "viewers-read",
+      "domain": "claims",
+      "minClassification": "internal",
+      "allowedRoles": [
+        "viewer",
+        "analyst",
+        "owner"
+      ],
+      "accessLevel": "read",
+      "enabled": true
+    },
+    {
+      "id": "analyst-execute",
+      "domain": "claims",
+      "minClassification": "internal",
+      "allowedRoles": [
+        "analyst",
+        "owner"
+      ],
+      "accessLevel": "execute",
+      "enabled": true
+    },
+    {
+      "id": "owner-admin",
+      "domain": "claims",
+      "minClassification": "restricted",
+      "allowedRoles": [
+        "owner"
+      ],
+      "accessLevel": "admin",
+      "enabled": true
+    }
+  ],
+  "rlsBindings": [],
+  "schedules": [],
+  "homepage": {
+    "type": "dashboard",
+    "id": "overview"
+  }
+}
