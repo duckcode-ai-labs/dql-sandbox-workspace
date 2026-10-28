@@ -6,6 +6,7 @@ block "Open claims by region" {
   status = "certified"
   owner = "maria@harbor.example"
   description = "How many claims are open in each region right now. The claims team's standing definition of open: status is open."
+  examples = [{ question = "How many open claims are there by region?" }]
   tags = ["claims", "open-claims"]
 
   query = """
