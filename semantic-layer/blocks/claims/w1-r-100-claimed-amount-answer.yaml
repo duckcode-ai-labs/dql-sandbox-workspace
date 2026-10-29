@@ -1,0 +1,26 @@
+name: w1-r-100-claimed-amount-answer
+block: w1-r-100-claimed-amount-answer
+domain: claims
+description: "Answers \\"
+owner: "success+dql-live-40799937705-perm-cole@simulator.amazonses.com"
+tags:
+  - request:R-100
+  - app-source
+source:
+  provider: dql
+  objectType: block
+  objectId: w1-r-100-claimed-amount-answer
+reviewStatus: certified
+certification:
+  certifiedBy: success+dql-live-40799937705-perm-cole@simulator.amazonses.com
+  certifiedAt: '2026-10-29T02:29:11.062Z'
+  via: block-studio
+  rules: enterprise
+  sourceSha256: 5ca9f1fa498b3eafd4b5e96528525340f4939c4eb0b624a4c8e6e213564da645
+  checks:
+    - metadata
+    - validation
+    - run
+    - tests
+    - lineage
+    - ai-reviewed
