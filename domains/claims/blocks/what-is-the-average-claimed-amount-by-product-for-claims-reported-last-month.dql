@@ -1,0 +1,30 @@
+// dql-format: 1
+// Draft for ZLens Enterprise request R-103, asked by Priya Analyst on 2026-10-31.
+
+block "What is the average claimed amount by product for claims reported last month" {
+  pattern = "custom"
+  domain = "claims"
+  type = "custom"
+  status = "certified"
+  owner = "kondapaka.ai+dan@gmail.com"
+  description = "What is the average claimed amount by product for claims reported last month?"
+  examples = [{ question = "What is the average claimed amount by product for claims reported last month?" }]
+  tags = ["request:R-103", "app-source"]
+  entities = ["claim"]
+  sourceSystems = ["claims"]
+  grain = "one row per product"
+  reviewCadence = "monthly"
+  outputs = ["avg_claimed_amount"]
+
+  query = """
+SELECT AVG(claimed_amount) AS avg_claimed_amount
+FROM claims
+WHERE reported_date >= DATE_TRUNC('month', CURRENT_DATE) - INTERVAL 1 MONTH
+  AND reported_date < DATE_TRUNC('month', CURRENT_DATE)
+GROUP BY product
+"""
+
+  tests {
+    assert row_count > 0
+  }
+}
