@@ -14,10 +14,10 @@ block "What is the average claimed amount by product for claims reported last mo
   sourceSystems = ["claims"]
   grain = "one row per product"
   reviewCadence = "monthly"
-  outputs = ["avg_claimed_amount"]
+  outputs = ["product", "avg_claimed_amount"]
 
   query = """
-SELECT AVG(claimed_amount) AS avg_claimed_amount
+SELECT product, AVG(claimed_amount) AS avg_claimed_amount
 FROM claims
 WHERE reported_date >= DATE_TRUNC('month', CURRENT_DATE) - INTERVAL 1 MONTH
   AND reported_date < DATE_TRUNC('month', CURRENT_DATE)
