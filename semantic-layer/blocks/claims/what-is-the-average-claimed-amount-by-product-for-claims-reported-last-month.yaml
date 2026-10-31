@@ -1,0 +1,29 @@
+name: what-is-the-average-claimed-amount-by-product-for-claims-reported-last-month
+block: what-is-the-average-claimed-amount-by-product-for-claims-reported-last-month
+domain: claims
+description: "What is the average claimed amount by product for claims reported last month?"
+owner: "kondapaka.ai+dan@gmail.com"
+tags:
+  - request:R-103
+  - app-source
+source:
+  provider: dql
+  objectType: block
+  objectId: what-is-the-average-claimed-amount-by-product-for-claims-reported-last-month
+reviewStatus: certified
+certification:
+  certifiedBy: kondapaka.ai+dan@gmail.com
+  certifiedByName: Dan Creator
+  certifiedAt: '2026-10-31T22:27:53.304Z'
+  via: block-studio
+  rules: enterprise
+  sourceSha256: 4048afb798151f3fb91e2b4198fd907e3b37b0c243cccf332c52bd75baa181c6
+  checks:
+    - metadata
+    - validation
+    - run
+    - tests
+    - lineage
+    - ai-reviewed
+  warnings:
+    - 'Block has LLM context: No llmContext set — agents will fall back to description/SQL'
