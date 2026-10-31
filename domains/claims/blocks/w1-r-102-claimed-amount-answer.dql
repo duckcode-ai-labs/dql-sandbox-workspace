@@ -1,0 +1,35 @@
+// dql-format: 1
+// Draft for ZLens Enterprise request R-102, asked by success+dql-live-41240868506-perm-erin@simulator.amazonses.com on 2026-10-31.
+// The SQL below is what the AI wrote. Make it right, declare its grain and keys, add a test and mark it certified,
+// then press "Submit for review" for a steward to review it.
+// Tables it read: harbor.main.adjusters, harbor.main.claims
+
+block "W1 R-102 claimed amount answer" {
+  domain = "claims"
+  type = "custom"
+  status = "certified"
+  owner = "success+dql-live-41240868506-perm-cole@simulator.amazonses.com"
+  description = "Answers \"How many claims does each adjuster team handle?\". W1 R-102 claimed amount answer. Built by the live check R-102."
+  examples = [{ question = "How many claims does each adjuster team handle?" }]
+  tags = ["request:R-102", "app-source"]
+  pattern = "custom"
+  entities = ["claim"]
+  sourceSystems = ["claims"]
+  grain = "one row per group in the question"
+  reviewCadence = "monthly"
+  llmContext = "Use for questions like \"How many claims does each adjuster team handle?\". live-check-w1 R-102"
+  outputs = ["team", "claim_count"]
+
+
+  query = """
+SELECT main.adjusters.team, COUNT(main.claims.claim_id) AS claim_count 
+FROM "harbor"."main"."claims" 
+JOIN "harbor"."main"."adjusters" ON main.claims.adjuster_id = main.adjusters.adjuster_id 
+GROUP BY main.adjusters.team
+LIMIT 501
+"""
+
+  tests {
+    assert row_count > 0
+  }
+}
