@@ -63,3 +63,18 @@ metrics:
     type_params:
       measure: paid_claim_count
     agg_time_dimension: paid_date
+  - name: average_claimed_amount
+    label: Average claimed amount
+    description: Average amount claimed per claim (live check W2).
+    domain: claims
+    cube: claims
+    table: claims
+    sql: AVG(claimed_amount)
+    type: avg
+    aggregation: average
+    metric_type: simple
+    type_params:
+      measure: average_claimed_amount
+    agg_time_dimension: reported_date
+    synonyms:
+      - mean claimed amount
