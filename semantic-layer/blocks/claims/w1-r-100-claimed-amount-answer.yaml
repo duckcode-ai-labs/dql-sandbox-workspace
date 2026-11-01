@@ -1,0 +1,27 @@
+name: w1-r-100-claimed-amount-answer
+block: w1-r-100-claimed-amount-answer
+domain: claims
+description: "Answers \\"
+owner: "success+dql-live-41352845524-perm-cole@simulator.amazonses.com"
+tags:
+  - request:R-100
+  - app-source
+source:
+  provider: dql
+  objectType: block
+  objectId: w1-r-100-claimed-amount-answer
+reviewStatus: certified
+certification:
+  certifiedBy: success+dql-live-41352845524-perm-cole@simulator.amazonses.com
+  certifiedAt: '2026-11-01T22:08:33.427Z'
+  via: block-studio
+  rules: enterprise
+  sourceSha256: bed77f8a8c5d56a3bea633c3bd9d8c22b40b63755db355afec116701dbde0247
+  checks:
+    - metadata
+    - validation
+    - run
+    - tests
+    - lineage
+    - ai-reviewed
+  branch: dql/success-dql-live-41352845524-p/R-100-which-adjusters-handle-the-most
