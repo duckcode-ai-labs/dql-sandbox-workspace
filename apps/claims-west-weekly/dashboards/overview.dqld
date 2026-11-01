@@ -1,0 +1,338 @@
+{
+  "version": 3,
+  "id": "overview",
+  "metadata": {
+    "title": "Overview",
+    "description": "Claims by product for the West region, week by week (live check W2)",
+    "domain": "claims",
+    "audience": "claims-team",
+    "visibility": "shared",
+    "lifecycle": "certified"
+  },
+  "layout": {
+    "kind": "grid",
+    "cols": 12,
+    "rowHeight": 80,
+    "items": [
+      {
+        "i": "open-claims-by-region-table",
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4,
+        "sourceId": "app:block:claims:587dd47c8624cba89cf7",
+        "sourceRevision": "sha256:1dc0a14b000d7b5155aa05717d194e4e5574ab45ea8b35ba6e3f800b568cb25c",
+        "query": {
+          "dimensions": [
+            {
+              "field": "region"
+            }
+          ],
+          "measures": [
+            {
+              "measure": "open_claims"
+            }
+          ],
+          "limit": 100,
+          "respectsGlobalFilters": true
+        },
+        "viz": {
+          "type": "table"
+        },
+        "title": "Open claims by region",
+        "sourceClass": "certified_block",
+        "filterBindings": [],
+        "review": {
+          "status": "not_required",
+          "sourceFingerprint": "sha256:1dc0a14b000d7b5155aa05717d194e4e5574ab45ea8b35ba6e3f800b568cb25c"
+        },
+        "trustState": "certified",
+        "reviewStatus": "certified"
+      },
+      {
+        "i": "claims-dataset-table",
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4,
+        "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+        "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+        "query": {
+          "dimensions": [
+            {
+              "field": "region"
+            }
+          ],
+          "measures": [
+            {
+              "measure": "claim_count"
+            }
+          ],
+          "limit": 100,
+          "respectsGlobalFilters": true
+        },
+        "viz": {
+          "type": "table"
+        },
+        "title": "Claims Dataset",
+        "sourceClass": "certified_block",
+        "filterBindings": [],
+        "review": {
+          "status": "not_required",
+          "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+        },
+        "trustState": "certified",
+        "reviewStatus": "certified"
+      }
+    ],
+    "responsive": {
+      "wide": {
+        "kind": "grid",
+        "cols": 12,
+        "rowHeight": 80,
+        "items": [
+          {
+            "i": "open-claims-by-region-table",
+            "x": 0,
+            "y": 0,
+            "w": 6,
+            "h": 4,
+            "sourceId": "app:block:claims:587dd47c8624cba89cf7",
+            "sourceRevision": "sha256:1dc0a14b000d7b5155aa05717d194e4e5574ab45ea8b35ba6e3f800b568cb25c",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "region"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "open_claims"
+                }
+              ],
+              "limit": 100,
+              "respectsGlobalFilters": true
+            },
+            "viz": {
+              "type": "table"
+            },
+            "title": "Open claims by region",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:1dc0a14b000d7b5155aa05717d194e4e5574ab45ea8b35ba6e3f800b568cb25c"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-dataset-table",
+            "x": 6,
+            "y": 0,
+            "w": 6,
+            "h": 4,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "region"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                }
+              ],
+              "limit": 100,
+              "respectsGlobalFilters": true
+            },
+            "viz": {
+              "type": "table"
+            },
+            "title": "Claims Dataset",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          }
+        ]
+      },
+      "medium": {
+        "kind": "grid",
+        "cols": 6,
+        "rowHeight": 80,
+        "items": [
+          {
+            "i": "open-claims-by-region-table",
+            "x": 0,
+            "y": 0,
+            "w": 3,
+            "h": 4,
+            "sourceId": "app:block:claims:587dd47c8624cba89cf7",
+            "sourceRevision": "sha256:1dc0a14b000d7b5155aa05717d194e4e5574ab45ea8b35ba6e3f800b568cb25c",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "region"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "open_claims"
+                }
+              ],
+              "limit": 100,
+              "respectsGlobalFilters": true
+            },
+            "viz": {
+              "type": "table"
+            },
+            "title": "Open claims by region",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:1dc0a14b000d7b5155aa05717d194e4e5574ab45ea8b35ba6e3f800b568cb25c"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-dataset-table",
+            "x": 3,
+            "y": 0,
+            "w": 3,
+            "h": 4,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "region"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                }
+              ],
+              "limit": 100,
+              "respectsGlobalFilters": true
+            },
+            "viz": {
+              "type": "table"
+            },
+            "title": "Claims Dataset",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          }
+        ]
+      },
+      "narrow": {
+        "kind": "grid",
+        "cols": 1,
+        "rowHeight": 80,
+        "items": [
+          {
+            "i": "open-claims-by-region-table",
+            "x": 0,
+            "y": 0,
+            "w": 1,
+            "h": 4,
+            "sourceId": "app:block:claims:587dd47c8624cba89cf7",
+            "sourceRevision": "sha256:1dc0a14b000d7b5155aa05717d194e4e5574ab45ea8b35ba6e3f800b568cb25c",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "region"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "open_claims"
+                }
+              ],
+              "limit": 100,
+              "respectsGlobalFilters": true
+            },
+            "viz": {
+              "type": "table"
+            },
+            "title": "Open claims by region",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:1dc0a14b000d7b5155aa05717d194e4e5574ab45ea8b35ba6e3f800b568cb25c"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          },
+          {
+            "i": "claims-dataset-table",
+            "x": 0,
+            "y": 4,
+            "w": 1,
+            "h": 4,
+            "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+            "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+            "query": {
+              "dimensions": [
+                {
+                  "field": "region"
+                }
+              ],
+              "measures": [
+                {
+                  "measure": "claim_count"
+                }
+              ],
+              "limit": 100,
+              "respectsGlobalFilters": true
+            },
+            "viz": {
+              "type": "table"
+            },
+            "title": "Claims Dataset",
+            "sourceClass": "certified_block",
+            "filterBindings": [],
+            "review": {
+              "status": "not_required",
+              "sourceFingerprint": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa"
+            },
+            "trustState": "certified",
+            "reviewStatus": "certified"
+          }
+        ]
+      }
+    }
+  },
+  "datasets": [
+    {
+      "id": "dataset_0b99a7a771f9c64f",
+      "sourceId": "app:block:claims:587dd47c8624cba89cf7",
+      "sourceRevision": "sha256:1dc0a14b000d7b5155aa05717d194e4e5574ab45ea8b35ba6e3f800b568cb25c",
+      "snapshotId": "17cbf77cedd98f8ce3d93b1b33893f526a07d3203ea8b69ca2d68f3048afe7a5",
+      "contractFingerprint": "sha256:c6492cde3ecc93685b2e9c2941c4d26ce56b47fe1640b3ac6be0b7e8a152044c"
+    },
+    {
+      "id": "dataset_f47c83a1217db99c",
+      "sourceId": "app:block:claims:e18d2004b1b01f8c2204",
+      "sourceRevision": "sha256:f9a5cb1b30eb74ee160a14eaf8703563b9f05279d54f8c9fb96a1c35554b14fa",
+      "snapshotId": "17cbf77cedd98f8ce3d93b1b33893f526a07d3203ea8b69ca2d68f3048afe7a5",
+      "contractFingerprint": "sha256:4dd74f56aaf680b94b764c79249e4174dd3bb6627fa4507a64bc535d04b38409"
+    }
+  ]
+}
