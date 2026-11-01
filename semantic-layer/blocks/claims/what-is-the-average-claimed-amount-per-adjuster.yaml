@@ -1,0 +1,30 @@
+name: what-is-the-average-claimed-amount-per-adjuster
+block: what-is-the-average-claimed-amount-per-adjuster
+domain: claims
+description: "What is the average claimed amount per adjuster?"
+owner: "kondapaka.ai+dan@gmail.com"
+tags:
+  - request:R-102
+  - app-source
+source:
+  provider: dql
+  objectType: block
+  objectId: what-is-the-average-claimed-amount-per-adjuster
+reviewStatus: certified
+certification:
+  certifiedBy: kondapaka.ai+dan@gmail.com
+  certifiedByName: Dan Creator
+  certifiedAt: '2026-11-01T23:47:46.383Z'
+  via: block-studio
+  rules: enterprise
+  sourceSha256: 49277d927928d253d6711746817f6c8a4212ae1e48acb27e0182f832ea5c7675
+  checks:
+    - metadata
+    - validation
+    - run
+    - tests
+    - lineage
+    - ai-reviewed
+  warnings:
+    - 'Block has LLM context: No llmContext set — agents will fall back to description/SQL'
+  branch: dql/dan-creator/R-102-what-is-the-average-claimed-amou

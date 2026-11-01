@@ -1,0 +1,31 @@
+// dql-format: 1
+// Draft for ZLens Enterprise request R-102, asked by Priya Analyst on 2026-11-01.
+// The SQL below is what the AI wrote. Make it right, declare its grain and keys, add a test and mark it certified,
+// then press "Submit for review" for a steward to review it.
+// Tables it read: harbor.main.adjusters, harbor.main.claims
+
+block "What is the average claimed amount per adjuster" {
+  // Suggested by DQL from this answer. Review each value before you certify: pattern, grain, outputs, reviewCadence, entities, sourceSystems, tests.
+  pattern = "custom"
+  grain = "one row per adjuster_id, adjuster_name"
+  outputs = ["adjuster_id", "adjuster_name", "average_claimed_amount_per_adjuster"]
+  reviewCadence = "quarterly"
+  entities = ["claims", "adjusters"]
+  sourceSystems = ["harbor.main.claims", "harbor.main.adjusters"]
+  domain = "claims"
+  type = "custom"
+  status = "certified"
+  owner = "kondapaka.ai+dan@gmail.com"
+  description = "What is the average claimed amount per adjuster?"
+  examples = [{ question = "What is the average claimed amount per adjuster?" }]
+  tags = ["request:R-102", "app-source"]
+
+  query = """
+SELECT adjusters.adjuster_id, adjusters.adjuster_name, AVG(claims.claimed_amount) AS average_claimed_amount_per_adjuster FROM "harbor"."main"."claims" AS claims JOIN "harbor"."main"."adjusters" AS adjusters ON claims.adjuster_id = adjusters.adjuster_id GROUP BY adjusters.adjuster_id, adjusters.adjuster_name
+LIMIT 501
+"""
+
+  tests {
+    assert row_count > 0
+  }
+}
