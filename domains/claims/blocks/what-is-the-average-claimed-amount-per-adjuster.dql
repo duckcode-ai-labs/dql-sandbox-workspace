@@ -8,7 +8,7 @@ block "What is the average claimed amount per adjuster" {
   // Suggested by DQL from this answer. Review each value before you certify: pattern, grain, outputs, reviewCadence, entities, sourceSystems, tests.
   pattern = "custom"
   grain = "one row per adjuster_id"
-  outputs = ["adjuster_id", "average_claimed_amount_per_adjuster"]
+  outputs = ["adjuster_id", "average_claimed_amount_per_adjuster", "product"]
   reviewCadence = "quarterly"
   entities = ["claims"]
   sourceSystems = ["harbor.main.claims"]
@@ -19,11 +19,10 @@ block "What is the average claimed amount per adjuster" {
   description = "What is the average claimed amount per adjuster?"
   examples = [{ question = "What is the average claimed amount per adjuster?" }]
   tags = ["request:R-102", "app-source"]
-
   query = """
-SELECT main.claims.adjuster_id, AVG(main.claims.claimed_amount) AS average_claimed_amount_per_adjuster FROM "harbor"."main"."claims" GROUP BY main.claims.adjuster_id
+SELECT main.claims.adjuster_id, main.claims.product, AVG(main.claims.claimed_amount) AS average_claimed_amount_per_adjuster FROM "harbor"."main"."claims" GROUP BY main.claims.adjuster_id, main.claims.product
 LIMIT 501
-"""
+  """
 
   tests {
     assert row_count > 0
