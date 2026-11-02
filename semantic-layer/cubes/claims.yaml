@@ -19,6 +19,13 @@ measures:
     type: sum
     aggregation: sum
     agg_time_dimension: reported_date
+  - name: average_claimed_amount
+    label: Average claimed amount
+    description: Average amount claimed per claim (live check W2).
+    sql: AVG(claimed_amount)
+    type: avg
+    aggregation: average
+    agg_time_dimension: reported_date
 dimensions:
   - name: region
     label: Region
@@ -45,5 +52,8 @@ time_dimensions:
     label: Reported date
     description: When the claim was reported.
     sql: reported_date
-    granularities: [day, week, month]
+    granularities:
+      - day
+      - week
+      - month
     primary_time: true
