@@ -16,7 +16,7 @@ block "What is the average claimed amount per adjuster" {
   type = "custom"
   status = "certified"
   owner = "kondapaka.ai+dan@gmail.com"
-  description = "What is the average claimed amount per adjuster?"
+  description = "Average claimed amount per adjuster and product, for Priya (R-102)"
   examples = [{ question = "What is the average claimed amount per adjuster?" }]
   tags = ["request:R-102", "app-source"]
   query = """

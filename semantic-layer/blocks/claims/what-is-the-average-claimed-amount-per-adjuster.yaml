@@ -1,7 +1,7 @@
 name: what-is-the-average-claimed-amount-per-adjuster
 block: what-is-the-average-claimed-amount-per-adjuster
 domain: claims
-description: "What is the average claimed amount per adjuster?"
+description: "Average claimed amount per adjuster and product, for Priya (R-102)"
 owner: "kondapaka.ai+dan@gmail.com"
 tags:
   - request:R-102
@@ -14,10 +14,10 @@ reviewStatus: certified
 certification:
   certifiedBy: kondapaka.ai+dan@gmail.com
   certifiedByName: Dan Creator
-  certifiedAt: '2026-11-02T00:03:52.628Z'
+  certifiedAt: '2026-11-02T19:15:27.092Z'
   via: block-studio
   rules: enterprise
-  sourceSha256: eb35c22642bd459a0000ecf62aa96ab95750cb4665df7f4ec1c90551ddee062c
+  sourceSha256: b014502ef53af9593588ff53c59681a348f7abed7dde9d447f3f7d5d01174b27
   checks:
     - metadata
     - validation
