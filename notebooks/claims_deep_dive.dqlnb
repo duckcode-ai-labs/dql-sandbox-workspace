@@ -1,0 +1,29 @@
+{
+  "dqlnbVersion": 2,
+  "version": 1,
+  "title": "Claims deep dive (renamed)",
+  "metadata": {
+    "createdWith": "dql",
+    "requiredExports": [],
+    "usesDomains": []
+  },
+  "cells": [
+    {
+      "id": "w21",
+      "type": "markdown",
+      "content": "# Claims deep dive\n\nBuilt by the live check W2."
+    },
+    {
+      "id": "w22",
+      "type": "sql",
+      "name": "products",
+      "content": "SELECT region, product, COUNT(*) AS claims FROM claims GROUP BY 1, 2 ORDER BY 1, 2"
+    },
+    {
+      "id": "w23",
+      "type": "dql",
+      "name": "open_by_region",
+      "content": "@block(\"Open claims by region\")"
+    }
+  ]
+}
