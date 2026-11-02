@@ -1,0 +1,28 @@
+{
+  "dqlnbVersion": 2,
+  "version": 1,
+  "title": "dan-scratch-shared",
+  "metadata": {
+    "createdAt": "2026-11-01T23:55:01.778Z",
+    "createdWith": "dql",
+    "modifiedAt": "2026-11-01T23:55:01.778Z",
+    "requiredExports": [],
+    "usesDomains": []
+  },
+  "cells": [
+    {
+      "id": "cell_1793577219812_mhb4o9",
+      "type": "sql",
+      "content": ""
+    },
+    {
+      "id": "cell_1793577166341_luh4d2",
+      "type": "sql",
+      "content": "SELECT region, TRY_CAST(claimed_amount AS INTEGER) AS amount FROM claims LIMIT 5",
+      "executionTarget": {
+        "connectionName": "default",
+        "target": "connection"
+      }
+    }
+  ]
+}
